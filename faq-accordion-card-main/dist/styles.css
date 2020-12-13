@@ -11,19 +11,31 @@
   color: var(--very-dark-blue);
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  background: linear-gradient(var(--soft-violet), var(--soft-blue));
+  height: 100%;
+  background-attachment: fixed;
+  padding: 5em 0 5em 0;
+}
+
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(var(--soft-violet), var(--soft-blue));
-  background-repeat: no-repeat;
-  height: 100vh;
 }
 
 .card {
   margin: calc(1em + 106px) 1em 1em 1em;
   border-radius: 1em;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
 }
 .card__image_container {
   margin-top: -106px;
@@ -33,7 +45,7 @@ body {
   margin-right: 26px;
 }
 .card__image_shadow {
-  margin-top: -106px;
+  margin-top: -90px;
 }
 .card__heading {
   margin: 1em;
@@ -42,7 +54,7 @@ body {
 }
 .card__accordion {
   margin: 1em 0 4em 0;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 .card__accordion details {
   color: var(--dark-gray-blue);
@@ -54,24 +66,22 @@ body {
   outline: none;
   margin: 1em 0 1em 0;
   color: var(--dark-blue);
-  position: relative;
   cursor: pointer;
+}
+.card__accordion details summary .arrow {
+  background-image: url("../images/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+  width: 10px;
+  height: 7px;
+  float: right;
+  transition: all 0.4s ease;
 }
 .card__accordion details summary::-webkit-details-marker {
   display: none;
 }
-.card__accordion details[open] summary ~ * {
-  animation: open 0.5s ease;
-}
-.card__accordion details summary:after {
-  content: url("../images/icon-arrow-down.svg");
-  position: absolute;
-  right: 0;
-  transition: 200ms linear;
-}
 .card__accordion details[open] summary {
   font-weight: bold;
 }
-.card__accordion details[open] summary:after {
+.card__accordion details[open] summary .arrow {
   transform: rotate(-180deg);
 }
