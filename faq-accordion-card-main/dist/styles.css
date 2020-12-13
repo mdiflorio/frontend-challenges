@@ -1,7 +1,77 @@
 :root {
-  color: blue;
+  --dark-blue: hsl(238, 29%, 16%);
+  --red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-gray-blue: hsl(237, 12%, 33%);
+  --dark-gray-blue: hsl(240, 6%, 50%);
+  --light-gray-blue: hsl(240, 5%, 91%);
+  font-size: 12px;
+  font-family: "Kumbh Sans", sans-serif;
+  color: var(--very-dark-blue);
 }
 
 body {
-  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(var(--soft-violet), var(--soft-blue));
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.card {
+  margin: calc(1em + 106px) 1em 1em 1em;
+  border-radius: 1em;
+  background-color: white;
+}
+.card__image_container {
+  margin-top: -106px;
+  text-align: center;
+}
+.card__image_main {
+  margin-right: 26px;
+}
+.card__image_shadow {
+  margin-top: -106px;
+}
+.card__heading {
+  margin: 1em;
+  font-size: 2.8em;
+  text-align: center;
+}
+.card__accordion {
+  margin: 1em 0 4em 0;
+  font-size: 1.2em;
+}
+.card__accordion details {
+  color: var(--dark-gray-blue);
+  margin: 0 2em 0 2em;
+  padding: 0.5em 0 0.5em 0;
+  border-bottom: 1px solid var(--light-gray-blue);
+}
+.card__accordion details summary {
+  outline: none;
+  margin: 1em 0 1em 0;
+  color: var(--dark-blue);
+  position: relative;
+  cursor: pointer;
+}
+.card__accordion details summary::-webkit-details-marker {
+  display: none;
+}
+.card__accordion details[open] summary ~ * {
+  animation: open 0.5s ease;
+}
+.card__accordion details summary:after {
+  content: url("../images/icon-arrow-down.svg");
+  position: absolute;
+  right: 0;
+  transition: 200ms linear;
+}
+.card__accordion details[open] summary {
+  font-weight: bold;
+}
+.card__accordion details[open] summary:after {
+  transform: rotate(-180deg);
 }

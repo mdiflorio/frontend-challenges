@@ -1,6 +1,79 @@
 
-    :root
-        color: blue
+:root
 
-    body
-        color: red
+    --dark-blue: hsl(238, 29%, 16%)
+    --red: hsl(14, 88%, 65%)
+    --soft-violet: hsl(273, 75%, 66%)
+    --soft-blue: hsl(240, 73%, 65%)
+    --very-dark-gray-blue: hsl(237, 12%, 33%)
+    --dark-gray-blue: hsl(240, 6%, 50%)
+    --light-gray-blue: hsl(240, 5%, 91%)
+
+    font-size: 12px
+    font-family: 'Kumbh Sans', sans-serif
+    color: var(--very-dark-blue)
+
+
+body
+    display: flex
+    justify-content: center
+    align-items: center
+    background: linear-gradient(var(--soft-violet), var(--soft-blue))
+    background-repeat: no-repeat
+    height: 100vh
+
+.card
+    margin: calc(1em + 106px) 1em 1em 1em
+    border-radius: 1em
+    background-color: white
+
+    &__image_container
+        margin-top: -106px
+        text-align: center
+
+    &__image_main
+        margin-right: 26px
+
+    &__image_shadow
+        margin-top: -106px
+
+    &__heading
+        margin: 1em
+        font-size: 2.8em
+        text-align: center
+
+    &__accordion
+        margin: 1em 0 4em 0
+        font-size: 1.2em
+
+        details
+            color: var(--dark-gray-blue)
+            margin: 0 2em 0 2em
+            padding: 0.5em 0 0.5em 0
+            border-bottom: 1px solid var(--light-gray-blue)
+
+            summary
+                outline: none
+                margin: 1em 0 1em 0
+                color: var(--dark-blue)
+                position: relative
+                cursor: pointer
+
+            summary::-webkit-details-marker 
+                display: none
+
+            &[open] summary ~ *
+                animation: open 0.5s ease
+
+            summary:after
+                content: url("../images/icon-arrow-down.svg")
+                position: absolute
+                right: 0
+                transition: 200ms linear
+
+            &[open]
+                summary
+                    font-weight: bold
+
+                summary:after
+                    transform: rotate(-180deg)
