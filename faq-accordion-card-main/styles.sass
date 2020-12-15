@@ -17,11 +17,10 @@ html
     height: 100%
 
 body
-    background: linear-gradient(var(--soft-violet), var(--soft-blue))
-    height: 100%
-    background-attachment: fixed
     padding: 5em 0 5em 0
-    
+    height: 100%
+    background: linear-gradient(var(--soft-violet), var(--soft-blue))
+    background-attachment: fixed
 
 .container
     display: flex
@@ -32,21 +31,20 @@ body
     margin: calc(1em + 106px) 1em 1em 1em
     border-radius: 1em
     background-color: white
-
-    display: flex
-    justify-content: center
-    flex-direction: column
     width: 100% 
 
     &__image_container
         margin-top: -106px
+        padding: 1em 0 1em 0
         text-align: center
 
-    &__image_main
-        margin-right: 26px
+        background-image: url("../images/illustration-woman-online-mobile.svg"), url("../images/bg-pattern-mobile.svg")
+        background-position-x: calc(50% - 13px ), 50%
+        background-position-y: 0, 106px
+        background-repeat: no-repeat
 
-    &__image_shadow
-        margin-top: -90px
+    &__cube
+        visibility: hidden
 
     &__heading
         margin: 1em
@@ -86,3 +84,39 @@ body
 
                     .arrow
                         transform: rotate(-180deg)
+
+
+@media ( min-width: 1050px )
+    .card
+        margin: auto
+        max-width: 80rem
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+
+        &__image_container
+            flex: 1
+            margin: 0
+            display: flex
+            justify-content: flex-start
+            align-items: center
+
+            background-image: url('../images/illustration-woman-online-desktop.svg'), url("../images/bg-pattern-desktop.svg")
+            background-position-x: -80px, -570px
+            background-position-y: center, 65% 
+            background-repeat: no-repeat, no-repeat
+
+        &__cube
+            visibility: visible
+            margin: 90px 0 0 -93px
+
+        &__text_container
+            flex:1
+            margin: 2em
+        
+        &__heading
+            text-align: left
+            margin: 1em 0 1em 0 
+
+        &__accordion
+            details
+                margin: 0 5em 0 0 
