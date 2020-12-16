@@ -1,0 +1,33 @@
+:root {
+  font-size: 15px;
+}
+
+.container {
+  width: 100vh;
+  height: 100vh;
+}
+.container__top {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container__bottom {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  counter-reset: cardCount;
+}
+
+.card {
+  height: 200px;
+  width: 300px;
+  background-color: lightgray;
+  border-radius: 8px;
+  margin-top: 3rem;
+}
+.card:nth-child(2) {
+  margin-top: 6rem;
+}
+.card:nth-child(3) {
+  margin-top: 9rem;
+}
